@@ -23,11 +23,6 @@
   },
   "anchors": [
     {
-      "name": "FAQ",
-      "icon": "info",
-      "url": "security"
-    },
-    {
       "name": "Security",
       "icon": "shield-halved",
       "url": "security"
@@ -40,7 +35,7 @@
   ],
   "navigation": [
     {
-      "group": "Overview",
+      "group": "Platform",
       "pages": ["introduction", "quickstart", "features"]
     },
     {
@@ -49,10 +44,18 @@
     },
     {
       "group": "Integrations",
-      "pages": ["overview", "features"]
+      "pages": ["integrations/overview",     
+      {
+        "group": "Complete List",
+        "pages": [
+          "integrations/list/github",
+          "integrations/list/vercel"
+        ]
+      }
+  ]
     },
     {
-      "group": "Company",
+      "group": "Policies",
       "pages": ["overview", "features"]
     }
   ],

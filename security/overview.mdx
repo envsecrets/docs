@@ -1,0 +1,42 @@
+---
+title: Security
+description: Overview of how we protect your secrets.
+---
+
+## Structure
+
+We use a privately hosted [Hashicorp's Vault](https://www.vaultproject.io/) instance for key management and encryption-as-a-service. 
+Every new organisation on envsecrets gets it's own `aes256-gcm96` encryption key. 
+Which is an AES-256 wrapped symmetric key with GCM using a 96-bit nonce size AEAD.
+
+All secrets inside that organisation, be it in any project or environment, are encrypted with the same key.
+
+As a good engineering practice, we store the encryption keys inside Vault but the encrypted secret values in a separate postgres database.
+This also makes it easier to query the database by specific secret names/keys.
+
+## Access Protection
+
+We implemented very specific row-level and column-level security on our transactional database to ensure only the data and relationships belonging to you are accessible by you.
+And no one else can gain visibility into your rows.
+
+To validate your access to specific rows and columns, we use the conventional method of reading claims from your post-login identity token.
+
+## Key Recovery
+
+Whenever you create a new organisation, we will email you a back-up version of it's newly generated encryption key.
+
+If, some god-forbidden day, we lost your encryption keys, you can easily re-load the key by going to the "organisation settings" on the platform.
+
+## Stack
+
+Using an industry standard and battle-tested tool like Vault that you already trust gives us enormous benefits. Amongst them:
+
+1. Builds trust on your part.
+1. Leverage Vault's inbuilt key-rotation.
+1. We don't have to take the risk of implementing encryptions from scratch and get sleep-less nights.
+
+## Statement
+
+As a secrets manager, we are deeply committed to enforcing the privacy and security of all users and data on the platform but acknowledge that it is virtually impossible to guarantee perfect security; unfortunately, even the most secure systems have vulnerabilities.
+
+As part of our commitment, we do our best to maintain platform privacy and security, notify users if anything goes wrong, and rectify adverse situations immediately if anything happens. As Infisical grows, we will be adding more opt-in security measures to ensure better data protection and maintain trust within the growing community. With that, let’s make the most simple and secure secrets management system out there!
