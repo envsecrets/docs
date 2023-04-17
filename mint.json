@@ -56,7 +56,12 @@
     },
     {
       "group": "Policies",
-      "pages": ["overview", "features"]
+      "pages": [
+        "policies/privacy", 
+        "policies/terms", 
+        "policies/refund", 
+        "policies/contact"
+      ]
     }
   ],
   "footerSocials": {
