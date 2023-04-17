@@ -1,65 +1,64 @@
 {
   "$schema": "https://mintlify.com/schema.json",
-  "name": "Documentation Starter Kit",
+  "name": "envsecrets",
   "logo": {
     "dark": "/logo/dark.png",
     "light": "/logo/light.png"
   },
   "favicon": "/favicon.png",
   "colors": {
-    "primary": "#0069ED",
+    "primary": "#0070F3",
     "light": "#4D9CFF",
     "dark": "#0050B4"
   },
   "topbarLinks": [
     {
-      "name": "Documentation",
-      "url": "https://mintlify.com/docs"
+      "name": "Home",
+      "url": "https://envsecrets.com"
     }
   ],
   "topbarCtaButton": {
-    "name": "Get Started",
-    "url": "https://github.com/mintlify/starter"
+    "name": "Start for free",
+    "url": "https://app.envsecrets.com"
   },
   "anchors": [
     {
-      "name": "API Reference",
-      "icon": "rectangle-terminal",
-      "url": "api-reference"
+      "name": "FAQ",
+      "icon": "info",
+      "url": "security"
     },
     {
-      "name": "Changelog",
-      "icon": "list",
-      "url": "https://mintlify.com"
+      "name": "Security",
+      "icon": "shield-halved",
+      "url": "security"
     },
     {
       "name": "Community",
       "icon": "discord",
-      "url": "https://mintlify.com/community"
+      "url": "https://discord.gg/zDF5MBfcqQ"
     }
   ],
   "navigation": [
     {
-      "group": "Home",
-      "pages": ["introduction", "features"]
+      "group": "Overview",
+      "pages": ["introduction", "quickstart", "features"]
     },
     {
-      "group": "API Documentation",
-      "pages": ["api-reference/authentication"]
+      "group": "Command Line",
+      "pages": ["cli/install", "cli/usage"]
     },
     {
-      "group": "Endpoint Examples",
-      "pages": [
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/update",
-        "api-reference/endpoint/delete"
-      ]
+      "group": "Integrations",
+      "pages": ["overview", "features"]
+    },
+    {
+      "group": "Company",
+      "pages": ["overview", "features"]
     }
   ],
   "footerSocials": {
-    "twitter": "https://twitter.com/mintlify",
-    "github": "https://github.com/mintlify",
-    "linkedin": "https://www.linkedin.com/company/mintsearch"
+    "twitter": "https://twitter.com/envsecrets",
+    "github": "https://github.com/envsecrets",
+    "linkedin": "https://www.linkedin.com/company/envsecrets"
   }
 }
