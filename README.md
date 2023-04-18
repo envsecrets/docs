@@ -4,7 +4,7 @@ description: What is envsecrets?
 
 # Introduction
 
-Create a forever-free account and start setting your secrets.envsecrets is a centralized cloud account to store your environment secrets and synchronize them with third-party services, platforms or cloud accounts.
+envsecrets is a centralized cloud account to store your environment secrets and synchronize them with third-party services, platforms or cloud accounts.
 
 You can also granularly control access of your team members down to every environment. And regularly rotate your keys for security.
 
