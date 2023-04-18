@@ -1,0 +1,92 @@
+---
+title: Quickstart
+description: Get started with envsecrets in 5 minutes.
+---
+
+# Quickstart
+
+## Preprequisites
+
+1. Signup for an [envsecrets account](https://app.envsecrets.com).
+2. Install the CLI [from here](../cli/install/).
+
+## Initialize
+
+Firstly, change directory to your project root.
+
+```
+cd my-project
+```
+
+Initalize the project directory for envsecrets.
+
+```
+envs init
+```
+
+This command will ask you to choose your organisation, project and one of it's environments.
+
+If you do not already have a project, you can create one directly from the CLI when prompted with the option.
+
+## Set Your Secrets
+
+```
+envs set DB_PASSWORD=awesome
+```
+
+This will create the first version of your secrets in the initialized environment.
+
+### **Import existing secrets (optional)**
+
+Import all the key-value pairs from your existing .env (or any equivalent) file in the following manner:
+
+```
+envs set --file .env
+```
+
+### **List the keys in latest version of your secret**
+
+This will help you validate that your key-value pair indeed got set.
+
+```
+envs ls
+```
+
+If you want to export complete key-value pairs and not just the keys, use: `envs export`
+
+## Example Program (Optional)
+
+Let's create a test script which will natively consume our secrets using the `envs` CLI.
+
+Copy and save the following contents in a file called `test.sh`.
+
+```
+echo $DB_PASSWORD
+```
+
+## Consume Secrets
+
+Inject the secrets into your process and make them natively accessible.
+
+\`\`\` envs run -- sh test.sh \`\`\` \`\`\` envs run -- \[Your Command] \`\`\`
+
+Running this command should ideally output:
+
+```
+awesome
+```
+
+## Integrate
+
+1. Login to the [platform](https://app.envsecrets.com).
+2. Go to the [integrations](https://app.envsecrets.com/integrations) tab.
+3. Open the [catalog](https://app.envsecrets.com/integrations/catalog).
+4. Select the Github integration.
+   * This will open Github's Oauth flow.
+   * Authorize envsecrets' GitHub app to read/write secrets vis-a-viz your target repository.
+   * You will be redirected back to our platform once this flow is complete.
+5. Once you land on the post-integration page, you have to choose your envsecrets project and environment along with the target Github repository.
+
+That is all! Now, go to your Github repository's "actions secrets" section in the repository "settings" and ensure the secret "DB\_PASSWORD" is available.
+
+Similarly, you can choose any native integration from our catalog of available integrations to keep your secrets synchronized everywhere in real-time.

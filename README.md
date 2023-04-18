@@ -1,34 +1,23 @@
-# Mintlify Starter Kit
+---
+title: Introduction
+description: What is envsecrets?
+---
 
-Click on `Use this template` to copy the Mintlify starter kit. The starter kit contains examples including
+envsecrets is a centralized cloud account to store your environment secrets and synchronize them with third-party services, platforms or cloud accounts.
 
-- Guide pages
-- Navigation
-- Customizations
-- API Reference pages
-- Use of popular components
+You can also granularly control access of your team members down to every environment. And regularly rotate your keys for security.
 
-### 👩‍💻 Development
+<CardGroup cols={2}>
+  <Card title="Quickstart" color="orange" icon="timer" href="/quickstart">
+    Create a forever-free account and start setting your secrets.
+  </Card>
+  <Card title="CLI" icon="rectangle-terminal" color="darkgrey" href="/cli">
+    Install instructions and how to inject secrets into your processes.
+  </Card>
+</CardGroup>
 
-Install the [Mintlify CLI](https://www.npmjs.com/package/mintlify) to preview the documentation changes locally. To install, use the following command
-
-```
-npm i -g mintlify
-```
-
-Run the following command at the root of your documentation (where mint.json is)
-
-```
-mintlify dev
-```
-
-### 😎 Publishing Changes
-
-Changes will be deployed to production automatically after pushing to the default branch.
-
-You can also preview changes using PRs, which generates a preview link of the docs.
-
-#### Troubleshooting
-
-- Mintlify dev isn't running - Run `mintlify install` it'll re-install dependencies.
-- Page loads as a 404 - Make sure you are running in a folder with `mint.json`
+<CardGroup cols={1}>
+  <Card title="Integrations" icon="plug" color="red" href="/integrations">
+    Connect third-party services and sync your secrets everywhere.
+  </Card>
+</CardGroup>
