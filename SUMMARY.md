@@ -1,16 +1,16 @@
 # Table of contents
 
 * [Introduction](README.md)
-* [Security](overview.md)
+* [Security](security/overview.mdx)
 * [Core Features](features.mdx)
 
 ## Platform
 
-* [Quickstart](platform/quickstart.md)
+* [Quickstart](quickstart.mdx)
 * [Guides](platform/guides/README.md)
-  * [Access Control](platform/guides/rbac.md)
-  * [Environment Tokens](platform/guides/tokens.md)
-  * [Secrets Versioning](platform/guides/versioning.md)
+  * [Access Control](guides/rbac.mdx)
+  * [Environment Tokens](guides/tokens.mdx)
+  * [Secrets Versioning](guides/versioning.mdx)
 
 ## Command Line <a href="#cli" id="cli"></a>
 
@@ -20,8 +20,8 @@
 ## Integrations
 
 * [Overview](integrations/overview.mdx)
-* [Github Actions](integrations/github.md)
-* [Vercel](integrations/vercel.md)
+* [Github Actions](integrations/list/github.mdx)
+* [Vercel](integrations/list/vercel.mdx)
 
 ## Policies
 

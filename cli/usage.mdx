@@ -3,12 +3,14 @@ title: Usage
 description: How to manage your secrets using our CLI?
 ---
 
+# Usage
+
 If you signed up using a social provider, please save your account password using the following steps in order to use the CLI.
 
 1. Login to [the platform](https://app.envsecrets.com).
-1. Click on your avatar in the header.
-1. Click on "change password."
-1. Set a memorable password.
+2. Click on your avatar in the header.
+3. Click on "change password."
+4. Set a memorable password.
 
 ## Authenticate
 
@@ -20,17 +22,18 @@ This will create your auth session file in `~/.envsecrets/config.yaml` containin
 
 ## Consume Secrets
 
-<Tabs>
-  <Tab title="Command">
-    ```
-    envs run -- [Your Command]
-    ```
-  </Tab>
-  <Tab title="Example">
-    ```
-    envs run -- npm run dev
-    ```
-  </Tab>
-</Tabs>
+{% tabs %}
+{% tab title="Command" %}
+```sh
+envs run -- [Your Command]
+```
+{% endtab %}
+
+{% tab title="Example" %}
+```sh
+envs run -- npm run dev
+```
+{% endtab %}
+{% endtabs %}
 
 This will inject the secrets into your process and make them natively accessible.
