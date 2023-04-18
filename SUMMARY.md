@@ -2,7 +2,6 @@
 
 * [Introduction](README.md)
 * [Security](security/overview.mdx)
-* [Core Features](features.mdx)
 
 ## Platform
 
