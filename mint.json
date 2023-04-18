@@ -28,6 +28,11 @@
       "url": "security"
     },
     {
+      "name": "Twitter",
+      "icon": "twitter",
+      "url": "https://twitter.com/envsecrets"
+    },
+    {
       "name": "Community",
       "icon": "discord",
       "url": "https://discord.gg/zDF5MBfcqQ"
@@ -36,7 +41,16 @@
   "navigation": [
     {
       "group": "Platform",
-      "pages": ["introduction", "quickstart", "features"]
+      "pages": ["introduction", "quickstart",
+      {
+        "group": "Feature Guides",
+        "pages": [
+          "guides/rbac",
+          "guides/versioning",
+          "guides/tokens"
+        ]
+      }
+]
     },
     {
       "group": "Command Line",
