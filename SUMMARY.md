@@ -1,7 +1,7 @@
 # Table of contents
 
 * [Introduction](README.md)
-* [Security](security/overview.mdx)
+* [Security](security.md)
 
 ## Platform
 
