@@ -4,33 +4,44 @@ description: Overview of how we protect your secrets.
 
 # Security
 
-## Structure
+## Data Model
 
-We use a privately hosted [Hashicorp's Vault](https://www.vaultproject.io/) instance for key management and encryption-as-a-service. Every new organisation on envsecrets gets it's own `aes256-gcm96` encryption key. Which is an AES-256 wrapped symmetric key with GCM using a 96-bit nonce size AEAD.
+### User
 
-All secrets inside that organisation, be it in any project or environment, are encrypted with the same key.
+* Every new user is issued an AES 256 bit public-private key pair.
 
-As a good engineering practice, we store the encryption keys inside Vault but the encrypted secret values in a separate postgres database. This also makes it easier to query the database by specific secret names/keys.
+#### Keys Backup
+
+* We encrypt your private key with a separate symmetric "protection" key. This new "protection" key is in turn protected with your account password using [Argon2i](https://en.wikipedia.org/wiki/Argon2), which can derive cryptographic keys from passwords and was selected as the winner of the 2015 Password Hashing Competition.
+* Now your public key, encrypted private key, encrypted protection key and hashed account password are stored on our servers.
+* Whenever you login from a different machine, your key pair is downloaded from our servers, decrypted locally using your account password and saved in your machine.
+
+### Organisation
+
+* Every new organisation is issued a fresh symmetric key.&#x20;
+* All secrets in this organisation are encrypted with it's key using the industry standard [NaCL](https://nacl.cr.yp.to/secretbox.html)'s [secretbox package](https://pkg.go.dev/golang.org/x/crypto/nacl/secretbox) which uses `XSalsa20` and `Poly1305` to encrypt and authenticate messages with secret-key cryptography.
+
+## Architecture&#x20;
+
+### Authentication
+
+* Running `envs login` from the CLI installs your public-private key pair locally after decrypting it with your account password.
+* Running `envs init` in the project root directory, saves the project configuration in that directory along with installing your encrypted copy of the chosen organisation's key.
+
+### Collaboration
+
+* When a new member is invited to your organisation, they are issued a copy of the organisation's key encrypted with their own (invitee's) public key using NaCL's [box package](https://pkg.go.dev/golang.org/x/crypto/nacl/box) which, in turn uses `Curve25519`, `XSalsa20` and `Poly1305` to encrypt and authenticate messages. And this copy is stored on our servers.
+
+### Cryptography
+
+* When a member does `envs set KEY=value` from the CLI, their locally stored copy of the organisation's key is first decrypted using their private key, then the secret **value** is encrypted with the decrypted key. This key-value pair is then uploaded on our servers.
+* Vice versa, when they do `envs get KEY`, the encrypted secret value is downloaded from our servers and decrypted using the locally stored copy of organisation's encryption key.
 
 ## Access Protection
 
-We implemented very specific row-level and column-level security on our transactional database to ensure only the data and relationships belonging to you are accessible by you. And no one else can gain visibility into your rows.
+We have carefully implemented very specific row-level and column-level security on our transactional database to ensure only the data and relationships belonging to you are accessible by you. And no one else can gain visibility into your rows.
 
 To validate your access to specific rows and columns, we use the conventional method of reading claims from your post-login identity token.
-
-## Key Recovery
-
-Whenever you create a new organisation, we will email you a back-up version of it's newly generated encryption key.
-
-If, some god-forbidden day, we lost your encryption keys, you can easily re-load the key by going to the "organisation settings" on the platform.
-
-## Stack
-
-Using an industry standard and battle-tested tool like Vault that you already trust gives us enormous benefits. Amongst them:
-
-1. Builds trust on your part.
-2. Leverage Vault's inbuilt key-rotation.
-3. We don't have to take the risk of implementing encryptions from scratch and get sleep-less nights.
 
 ## Statement
 

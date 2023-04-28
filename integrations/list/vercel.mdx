@@ -1,6 +1,26 @@
 ---
-description: Connecting third-party services, platforms and cloud accounts.
+description: Push your envsecrets to your Vercel app's variables.
 ---
 
 # Vercel
 
+### Reserved Environment Variables
+
+The following secrets/variables cannot be forward-synced to Vercel because they are reserved for Vercel's runtime:
+
+* AWS\_REGION
+* AWS\_DEFAULT\_REGION
+* AWS\_ACCESS\_KEY\_ID
+* AWS\_SECRET\_KEY
+* AWS\_SECRET\_ACCESS\_KEY
+* AWS\_EXECUTION\_ENV
+* AWS\_LAMBDA\_LOG\_GROUP\_NAME
+* AWS\_LAMBDA\_LOG\_STREAM\_NAME
+* AWS\_LAMBDA\_FUNCTION\_NAME
+* AWS\_LAMBDA\_FUNCTION\_MEMORY\_SIZE
+* AWS\_LAMBDA\_FUNCTION\_VERSION
+* AWS\_SESSION\_TOKEN
+* NOW\_REGION
+* TZ
+* LAMBDA\_TASK\_ROOT
+* LAMBDA\_RUNTIME\_DIR
