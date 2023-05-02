@@ -8,6 +8,37 @@ Secrets aren't supposed to be read by only humans. Sometimes, even machines need
 
 To solve this issue, envsecrets allows you to generate ephemeral read-only tokens for a specific environment. These tokens allow you to authenticate the CLI against our APIs and export your secrets securely.
 
+Use the following command:
+
 ```sh
 envs export --token [your-secure-token]
+```
+
+## Example
+
+Use the following sample job step in your Github Actions workflow file.
+
+```yaml
+name: envs
+
+on:
+  push:
+
+jobs:
+  run_tests:
+    runs-on: ubuntu-20.04
+    steps:
+    - uses: actions/checkout@v2
+    - name: Export Secrets
+      run: |
+          export CLI_VERSION=0.1.7
+          wget https://github.com/envsecrets/cli/releases/download/v${CLI_VERSION}/cli_${CLI_VERSION}_linux_amd64.tar.gz
+          tar -xvzf cli_${CLI_VERSION}_linux_amd64.tar.gz
+          chmod +x ./envs
+          ./envs export --token b38fd6ef7fd54c53f972c03fe2110ec2 >> $GITHUB_ENV
+      shell: bash
+    - name: Read Secrets
+      run: |
+          echo $API_KEY
+      shell: bash
 ```
