@@ -8,7 +8,7 @@ description: Overview of how we protect your secrets.
 
 ### User
 
-* Every new user is issued an AES 256 bit public-private key pair.
+* Every new user is issued a public-private key pair.
 
 #### Keys Backup
 
@@ -18,7 +18,7 @@ description: Overview of how we protect your secrets.
 
 ### Organisation
 
-* Every new organisation is issued a fresh symmetric key.&#x20;
+* Every new organisation is issued a fresh AES 256 bit symmetric key.&#x20;
 * All secrets in this organisation are encrypted with it's key using the industry standard [NaCL](https://nacl.cr.yp.to/secretbox.html)'s [secretbox package](https://pkg.go.dev/golang.org/x/crypto/nacl/secretbox) which uses `XSalsa20` and `Poly1305` to encrypt and authenticate messages with secret-key cryptography.
 
 ## Architecture&#x20;
