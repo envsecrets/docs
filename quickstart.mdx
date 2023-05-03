@@ -1,5 +1,5 @@
 ---
-description: Get started with envsecrets in 5 minutes.
+description: Get started with envsecrets in 4 minutes.
 ---
 
 # Quickstart
@@ -67,7 +67,19 @@ echo $DB_PASSWORD
 
 Inject the secrets into your process and make them natively accessible.
 
-\`\`\` envs run -- sh test.sh \`\`\` \`\`\` envs run -- \[Your Command] \`\`\`
+{% tabs %}
+{% tab title="Example" %}
+```bash
+envs run -- sh test.sh
+```
+{% endtab %}
+
+{% tab title="Second Tab" %}
+```bash
+ envs run -- [Your Command]
+```
+{% endtab %}
+{% endtabs %}
 
 Running this command should ideally output:
 
