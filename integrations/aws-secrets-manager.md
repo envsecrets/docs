@@ -57,7 +57,7 @@ description: >-
     3. Select **Another AWS account** under **An AWS account**
        1. Enter **284838358097** for the **Account ID**. This is envsecrets's account ID.
     4. Under **Options** check **Require external ID**
-       1. Enter your organisation ID for the External ID. You can obtain your organisation ID by visiting the organisation settings in your envsecrets dashboard.
+       1. Enter your organisation ID for the External ID. You can obtain your organisation ID by visiting the [organisation settings](https://app.envsecrets.com/settings) in your envsecrets dashboard.
        2. Leave **require MFA** unchecked
     5. Attach the "envsecrets" policy you created above.
     6. Name your role as "envsecrets" and complete the role setup.
