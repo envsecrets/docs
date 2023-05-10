@@ -68,12 +68,12 @@ description: >-
    1. Go to [integrations catalog](https://app.envsecrets.com/integrations/catalog) in your envsecrets dashboard and choose "AWS Secrets Manager."
    2. On the setup/connection page, enter your AWS region and ARN of the "envsecrets" role you created above and save.
 
-## Configuration
+## Activation
 
 1. Go to the [integrations](https://app.envsecrets.com/integrations) dashbaord in your envsecrets organisation and under "AWS Secrets Manager" choose "Manage."
 2. Click on "Sync Secrets" button.
 3. In the page that opens, select your envsecrets project, environment and enter the name with which you wish you save your secret in AWS Secrets Manager.
-4. Save the configuration.
+4. Complete and save the form.
 
 ## Usage
 
