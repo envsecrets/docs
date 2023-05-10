@@ -21,8 +21,8 @@
 * [Overview](integrations/overview.mdx)
 * [Github Actions](integrations/list/github.mdx)
 * [Vercel](integrations/list/vercel.mdx)
-* [AWS Secrets Manager](integrations/aws-secrets-manager.md)
-* [Circle CI](integrations/circle-ci.md)
+* [AWS Secrets Manager](integrations/asm.md)
+* [Circle CI](integrations/circle.md)
 
 ## Policies
 

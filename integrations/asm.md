@@ -70,7 +70,7 @@ description: >-
 
 ## Activation
 
-1. Go to the [integrations](https://app.envsecrets.com/integrations) dashbaord in your envsecrets organisation and under "AWS Secrets Manager" choose "Manage."
+1. Go to the [integrations](https://app.envsecrets.com/integrations) dashboard in your envsecrets organisation and under "AWS Secrets Manager" choose "Manage."
 2. Click on "Sync Secrets" button.
 3. In the page that opens, select your envsecrets project, environment and enter the name with which you wish you save your secret in AWS Secrets Manager.
 4. Complete and save the form.
@@ -78,7 +78,7 @@ description: >-
 ## Usage
 
 1. Right after saving the configuration and activating an integration on a specific environment in envsecrets, your secrets will automatically get synced for the first time to your AWS Secrets Manager. It is advisable you open your ASM dashboard and check the values in your new secret.
-2. From here on, everytime you create a new version of your secrets in your environment, the new values will automatically get pushed to your ASM secret.
+2. From here on, every time you create a new version of your secrets in your environment, the new values will automatically get pushed to your ASM secret.
 
 {% hint style="warning" %}
 Every new version of your secret in envsecrets will create a new version of the existing secret in AWS Secrets Manager.
