@@ -70,7 +70,7 @@ Ensure the gcloud CLI is configured to use the correct project, e.g. `gcloud con
    2. On the setup/connection page, enter the service account keys you created above and save the form.
 
 {% hint style="info" %}
-
+We will enable "**Automatic Replication**" for your GCP secret by default. You can learn more about this from [GCP Secret Manager replication docs](https://cloud.google.com/secret-manager/docs/choosing-replication).
 {% endhint %}
 
 ## Activation
