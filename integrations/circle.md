@@ -1,5 +1,5 @@
 ---
-description: Setup and usage guide on how to continuously sync your secrets with Circle CI.
+description: Setup guide on how to continuously sync your secrets with Circle CI.
 ---
 
 # Circle CI
