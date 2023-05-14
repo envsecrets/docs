@@ -8,3 +8,9 @@ description: Connecting third-party services, platforms and cloud accounts.
 Our platform smoothly supports integrating third-party services for uni-directional syncing. Implying, every time you update your secrets in envsecrets, the new values will automatically be synced with your external services.
 
 For example, if you connected a Github Actions integration in your organisation and enabled it on any environment of your project, your secrets will be synced/pushed to your Github repository's Actions secrets. Which, in turn, you can natively access in your Actions/Workflow pipelines.
+
+{% hint style="danger" %}
+Whenever you connect a new integration, we have to **temporarily** decrypt your secrets to transfer them forward to your chosen integration.
+
+This is a momentary operation and NO decrypted secrets are persisted or saved anywhere in our database once this syncing is complete.
+{% endhint %}
