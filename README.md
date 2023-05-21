@@ -4,6 +4,8 @@ description: What is envsecrets?
 
 # Introduction
 
+<figure><img src=".gitbook/assets/envsecrets(1).png" alt=""><figcaption></figcaption></figure>
+
 envsecrets is a centralized cloud account to store your environment secrets and synchronize them with third-party services, platforms or cloud accounts.
 
 You can also granularly control access of your team members down to every environment. And regularly rotate your secrets for security.

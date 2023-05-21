@@ -19,7 +19,6 @@
 ## Integrations
 
 * [Overview](integrations/overview.mdx)
-* [Github Actions](integrations/list/github.mdx)
 * [Vercel](integrations/list/vercel.mdx)
 * [AWS Secrets Manager](integrations/asm.md)
 * [GCP Secrets Manager](integrations/gsm.md)
@@ -31,3 +30,4 @@
 * [Cancellation & Refund](policies/refund.mdx)
 * [Privacy Policy](policies/privacy.mdx)
 * [Terms and Conditions](policies/terms.mdx)
+* [Shipping & Delivery](policies/shipping.md)
