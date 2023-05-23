@@ -19,6 +19,7 @@
 ## Integrations
 
 * [Overview](integrations/overview.mdx)
+* [Github Actions](integrations/github.md)
 * [Vercel](integrations/list/vercel.mdx)
 * [AWS Secrets Manager](integrations/asm.md)
 * [GCP Secrets Manager](integrations/gsm.md)
