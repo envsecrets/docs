@@ -23,7 +23,7 @@
 * [Vercel](integrations/list/vercel.mdx)
 * [AWS Secrets Manager](integrations/asm.md)
 * [GCP Secrets Manager](integrations/gsm.md)
-* [Circle CI](integrations/circle.md)
+* [Circle CI](integrations/circleci.md)
 * [Supabase](integrations/supabase.md)
 
 ## Policies
